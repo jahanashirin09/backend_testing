@@ -3,17 +3,22 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon script"
+    "test": "vitest",
+    "dev": "nodemon script",
+     "test-c": "vitest --coverage"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
     "express": "^4.21.1",
-    "mysql2": "^3.11.3"
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.11.3",
+    "supertest": "^7.0.0",
+    "vitest": "^2.1.4"
   },
   "devDependencies": {
+    "@vitest/coverage-v8": "^2.1.4",
     "nodemon": "^3.1.7"
   }
 }

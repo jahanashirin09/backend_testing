@@ -1,26 +1,24 @@
-const db=require("../config/database")
-const getStudent=async(req,res)=>{
-    try {
-        const data=await db.query("SELECT * FROM Details")
-        if(!data){
-            return res.status(404).send({
-                success:false,
-                message:"no details found"
-            })
-        }
-        res.status(200).send({
-           
-            data:data[0],
-        })
+const db = require("../config/database");
+const getStudent = async (req, res) => {
+  try {
+    const data = await db.query("SELECT * FROM Details");
 
-    } catch (error) {
-        console.log(error);
-        res.status(500).send({
-            success:false,
-            message:"server error",
-            error
-        })
-        
+    if (!data) {
+      return res.status(404).send({
+        success: false,
+        message: "No details found",
+      });
     }
+    res.status(200).send({
+      data: data[0],
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send({
+      success: false,
+      message: "server error",
+      error,
+    });
+  }
 };
-module.exports={getStudent}
+module.exports = { getStudent };
