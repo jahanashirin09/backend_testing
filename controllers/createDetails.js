@@ -17,21 +17,23 @@ const create = async (req, res) => {
         message: "Please provide all required fields",
       });
     }
+
     const data = await db.query(
       "INSERT INTO Details (PersonID,FirstName,LastName,Address,City,Username,Password) VALUES (?,?,?,?,?,?,?)",
       [PersonID, FirstName, LastName, Address, City, Username, Password]
     );
+    const result = await db.query('DELETE FROM Details WHERE PersonID = ?', [12]);
     res.status(201).send({
       success: true,
       message: "Details created successfully",
     });
   } catch (error) {
-    console.log(error);
+    console.error("Error creating details:", error);
     res.status(500).send({
       success: false,
       message: "Server Error",
-      error,
+      error: error.message,
     });
   }
 };
-module.exports = { create };
+module.exports = { create }

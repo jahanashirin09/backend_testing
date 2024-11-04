@@ -7,7 +7,7 @@ app.use("/person", routes);
 app.get("/user", (req, res) => {
   res.send("<h1>home</h1>");
 });
-app.checkout("*", (req, res) => {
+app.get("*", (req, res) => {
   res.send("<h1>404 Error</h1>");
 });
 const PORT = process.env.process || 3001;
