@@ -5,7 +5,7 @@
   "scripts": {
     "test": "vitest",
     "dev": "nodemon script",
-     "test-c": "vitest --coverage"
+    "test-c": "vitest --coverage"
   },
   "author": "",
   "license": "ISC",

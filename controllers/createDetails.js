@@ -1,6 +1,6 @@
-const db = require("../config/database");
+const data= require("./create_data");
 const create = async (req, res) => {
-  try {
+  
     const { PersonID, FirstName, LastName, Address, City, Username, Password } =
       req.body;
     if (
@@ -17,23 +17,13 @@ const create = async (req, res) => {
         message: "Please provide all required fields",
       });
     }
-
-    const data = await db.query(
-      "INSERT INTO Details (PersonID,FirstName,LastName,Address,City,Username,Password) VALUES (?,?,?,?,?,?,?)",
-      [PersonID, FirstName, LastName, Address, City, Username, Password]
-    );
-    const result = await db.query('DELETE FROM Details WHERE PersonID = ?', [12]);
+      
+    data(PersonID, FirstName, LastName, Address, City, Username, Password);
+   
     res.status(201).send({
       success: true,
       message: "Details created successfully",
     });
-  } catch (error) {
-    console.error("Error creating details:", error);
-    res.status(500).send({
-      success: false,
-      message: "Server Error",
-      error: error.message,
-    });
-  }
+  
 };
 module.exports = { create }

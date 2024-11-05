@@ -6,7 +6,7 @@ const { update } = require("../controllers/updateDetails");
 const { deletedetails } = require("../controllers/delete");
 const { login } = require("../controllers/loginDetails");
 const { verifyToken } = require("../controllers/loginDetails");
-router.get("/getall", verifyToken, getStudent);
+router.get("/getall", verifyToken, getStudent);            
 router.post("/create", verifyToken, create);
 router.put("/update/:PersonID", verifyToken, update);
 router.delete("/delete/:PersonID", verifyToken, deletedetails);

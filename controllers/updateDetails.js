@@ -1,6 +1,7 @@
 const db = require("../config/database");
+const delete_data = require("./delete_data");
 const update = async (req, res) => {
-  try {
+
     const PersonID = req.params.PersonID;
     if (!PersonID) {
       return res.status(404).send({
@@ -9,11 +10,8 @@ const update = async (req, res) => {
       });
     }
     const { FirstName, LastName, Address, City, Username, Password } = req.body;
-    const data = await db.query(
-      `UPDATE Details SET FirstName=?,LastName=?,Address=?,City=?,Username=?,Password=? WHERE PersonID=?`,
-      [FirstName, LastName, Address, City, Username, Password, PersonID]
-    );
-    if (!data) {
+    delete_data(FirstName, LastName, Address, City, Username, Password, PersonID)
+    if (PersonID===undefined) {
       return res.status(500).send({
         success: false,
         message: "failed to update Details",
@@ -23,13 +21,6 @@ const update = async (req, res) => {
       success: true,
       message: "Details updated successfully",
     });
-  } catch (error) {
-    console.log(error);
-    res.status(500).send({
-      success: false,
-      message: "Server error",
-      error,
-    });
-  }
+  
 };
 module.exports = { update };

@@ -1,7 +1,6 @@
 const db = require("../config/database");
-
+const delete_data = require("./delete_data");
 const deletedetails = async (req, res) => {
-  try {
     const PersonID = req.params.PersonID;
     if (!PersonID) {
       return res.status(404).send({
@@ -9,27 +8,13 @@ const deletedetails = async (req, res) => {
         message: "Invalid PersonID",
       });
     }
-    const data = await db.query("DELETE FROM Details WHERE PersonID=?", [
-      PersonID,
-    ]);
-    if (!data) {
-      return res.status(500).send({
-        success: false,
-        message: "Failed to delete ",
-      });
-    }
+
+    delete_data(PersonID)
     res.status(200).send({
       success: true,
       message: "Details deleted successfully",
     });
-  } catch (error) {
-    console.log(error);
-    res.status(500).send({
-      success: false,
-      message: "Server Error",
-      error,
-    });
-  }
+  
 };
 
 module.exports = { deletedetails };
