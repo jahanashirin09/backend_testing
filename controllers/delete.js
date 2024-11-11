@@ -13,6 +13,7 @@ const deletedetails = async (req, res) => {
     success: true,
     message: "Details deleted successfully",
   });
+
 };
 
 module.exports = { deletedetails };

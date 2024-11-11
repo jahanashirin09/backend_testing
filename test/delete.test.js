@@ -1,7 +1,7 @@
 import { describe, it, expect, vi } from "vitest";
 import { deletedetails } from "../controllers/delete";
 
-vi.mock("../controllers/create_data", () => ({
+vi.mock("../controllers/delete_data", () => ({
   default: vi.fn(),
 }));
 

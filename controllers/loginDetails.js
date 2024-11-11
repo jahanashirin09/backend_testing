@@ -24,6 +24,7 @@ const login = async (req, res) => {
         message: "Login failed: invalid username or password",
       });
     }
+    
     const user = data[0][0];
 
     let resp = {
