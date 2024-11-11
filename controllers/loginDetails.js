@@ -1,24 +1,7 @@
 const db = require("../config/database");
 var jwt = require("jsonwebtoken");
-
-function verifyToken(req, res, next) {
-  let authHeader = req.headers.authorization;
-  if (authHeader == undefined) {
-    res.status(401).send({ error: "no token provided" });
-  }
-  let token = authHeader.split(" ")[1];
-  jwt.verify(token, "secret", function (err, decoded) {
-    if (err) {
-      res.status(500).send({
-        error: "authenticatio failed",
-      });
-    } else {
-      next();
-    }
-  });
-}
 const login = async (req, res) => {
-  try {
+ 
     if (!req.body.Username || !req.body.Password) {
       return res
         .status(400)
@@ -54,15 +37,6 @@ const login = async (req, res) => {
       message: "logged successfully",
       token: token,
     });
-  } catch (error) {
-    {
-      console.log(error);
-      res.status(500).send({
-        success: false,
-        message: "Server Error",
-        error,
-      });
-    }
-  }
+
 };
-module.exports = { login, verifyToken };
+module.exports = { login};

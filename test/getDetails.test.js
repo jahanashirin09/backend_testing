@@ -1,28 +1,26 @@
-import { describe, expect, it, vi } from "vitest";
-import { getStudent } from "../controllers/getstudentDetails";
-describe("get function ", () => {
-  vi.mock("../config/database", () => ({
-    default: vi.fn(),
-  }));
-  const mockreq = () => ({});
-  const mockresp = () => {
-    const res = {};
-    res.status = vi.fn().mockReturnValue(res);
-    res.send = vi.fn().mockReturnValue(res);
-    return res;
-  };
-  it("should return 200 for successful details", async () => {
-    // const data = vi.fn(() => null);
-    const data = vi.fn(() => ({ PersonID: 1, FirstName: "John" }));
-    console.log(data.mockResolvedValue);
-    const req = mockreq({});
-    const res = mockresp();
-    await getStudent(req, res);
-    expect(res.status).toHaveBeenCalledWith(200);
-  });
-  it("should return 404 for no details found", async () => {
-    const req = mockreq();
-    const res = mockresp();
+import { describe, it, expect, vi } from "vitest";
+import { getStudent } from "../controllers/getDetails";
+import db from "../config/database";
+
+describe("getStudent function", () => {
+  it("should return 200 with the data when details are found", async () => {
+    const mockData = [
+      {
+        PersonID: 1,
+        FirstName: "John",
+        LastName: "Doe",
+        Address: "123 Main St",
+        City: "New York",
+        Username: "johndoe",
+        Password: "password123",
+      },
+    ];
+    vi.spyOn(db, "query").mockResolvedValue([mockData]);
+    const req = {};
+    const res = {
+      status: vi.fn().mockReturnThis(),
+      send: vi.fn(),
+    };
     await getStudent(req, res);
     expect(res.status).toHaveBeenCalledWith(200);
   });

@@ -4,8 +4,8 @@ import { create } from "../controllers/createDetails";
 vi.mock("../controllers/create_data", () => ({
   default: vi.fn(),
 }));
-const mockReq = (body) => ({ body });
 
+const mockReq = (body) => ({ body });
 const mockRes = () => {
   const res = {};
   res.status = vi.fn().mockReturnValue(res);
@@ -42,6 +42,7 @@ describe("create function", () => {
       Username: "johndoe",
       Password: "password123",
     });
+    
     const res = mockRes();
     await create(req, res);
     expect(res.status).toHaveBeenCalledWith(201);

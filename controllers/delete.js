@@ -1,4 +1,3 @@
-const db = require("../config/database");
 const delete_data = require("./delete_data");
 const deletedetails = async (req, res) => {
   const PersonID = req.params.PersonID;
