@@ -15,7 +15,7 @@ const create = async (req, res) => {
       message: "Please provide all required fields",
     });
   }
-  
+
   res.status(201).send({
     success: true,
     message: "Details created successfully",

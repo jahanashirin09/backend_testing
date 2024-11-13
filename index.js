@@ -5,7 +5,7 @@ app.use(express.json());
 const routes = require("./routes/detailsRoutes");
 app.use("/person", routes);
 app.get("/user", (req, res) => {
-  res.status(200)
+  res.status(200);
   res.send("<h1>home</h1>");
 });
 app.get("*", (req, res) => {
@@ -16,4 +16,4 @@ const PORT = process.env.process || 3001;
 app.listen(PORT, () => {
   console.log(`server running in ${PORT}`);
 });
-module.exports=app
+module.exports = app;

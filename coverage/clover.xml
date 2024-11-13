@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1731382153884" clover="3.2.0">
-  <project timestamp="1731382153884" name="All files">
-    <metrics statements="229" coveredstatements="185" conditionals="34" coveredconditionals="29" methods="16" coveredmethods="8" elements="279" coveredelements="222" complexity="0" loc="229" ncloc="229" packages="4" files="13" classes="13"/>
+<coverage generated="1731472205223" clover="3.2.0">
+  <project timestamp="1731472205223" name="All files">
+    <metrics statements="225" coveredstatements="181" conditionals="34" coveredconditionals="29" methods="16" coveredmethods="8" elements="275" coveredelements="218" complexity="0" loc="225" ncloc="225" packages="4" files="13" classes="13"/>
     <package name="Backend_testing">
       <metrics statements="19" coveredstatements="19" conditionals="3" coveredconditionals="3" methods="0" coveredmethods="0"/>
       <file name="index.js" path="/Users/uidesign/Documents/problem/Backend_testing/index.js">
@@ -43,7 +43,7 @@
       </file>
     </package>
     <package name="Backend_testing.controllers">
-      <metrics statements="187" coveredstatements="143" conditionals="30" coveredconditionals="25" methods="16" coveredmethods="8"/>
+      <metrics statements="183" coveredstatements="139" conditionals="30" coveredconditionals="25" methods="16" coveredmethods="8"/>
       <file name="createDetails.js" path="/Users/uidesign/Documents/problem/Backend_testing/controllers/createDetails.js">
         <metrics statements="24" coveredstatements="23" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="1"/>
         <line num="1" count="0" type="cond" truecount="2" falsecount="0"/>
@@ -93,7 +93,7 @@
         <line num="18" count="0" type="stmt"/>
       </file>
       <file name="delete.js" path="/Users/uidesign/Documents/problem/Backend_testing/controllers/delete.js">
-        <metrics statements="19" coveredstatements="17" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="1"/>
+        <metrics statements="18" coveredstatements="16" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="1"/>
         <line num="1" count="0" type="cond" truecount="1" falsecount="0"/>
         <line num="2" count="0" type="cond" truecount="1" falsecount="0"/>
         <line num="3" count="2" type="stmt"/>
@@ -112,7 +112,6 @@
         <line num="16" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
       </file>
       <file name="delete_data.js" path="/Users/uidesign/Documents/problem/Backend_testing/controllers/delete_data.js">
         <metrics statements="7" coveredstatements="6" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
@@ -150,17 +149,17 @@
         <line num="5" count="0" type="stmt"/>
       </file>
       <file name="loginDetails.js" path="/Users/uidesign/Documents/problem/Backend_testing/controllers/loginDetails.js">
-        <metrics statements="43" coveredstatements="40" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="1"/>
+        <metrics statements="41" coveredstatements="38" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="1"/>
         <line num="1" count="0" type="cond" truecount="1" falsecount="0"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="cond" truecount="1" falsecount="0"/>
-        <line num="4" count="3" type="stmt"/>
-        <line num="5" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="4" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="2" type="stmt"/>
         <line num="11" count="2" type="stmt"/>
         <line num="12" count="2" type="stmt"/>
         <line num="13" count="2" type="stmt"/>
@@ -170,8 +169,8 @@
         <line num="17" count="2" type="stmt"/>
         <line num="18" count="2" type="stmt"/>
         <line num="19" count="2" type="stmt"/>
-        <line num="20" count="2" type="stmt"/>
-        <line num="21" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="20" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="21" count="1" type="stmt"/>
         <line num="22" count="1" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
@@ -192,8 +191,6 @@
         <line num="39" count="1" type="stmt"/>
         <line num="40" count="1" type="stmt"/>
         <line num="41" count="1" type="stmt"/>
-        <line num="42" count="1" type="stmt"/>
-        <line num="43" count="1" type="stmt"/>
       </file>
       <file name="updateDetails.js" path="/Users/uidesign/Documents/problem/Backend_testing/controllers/updateDetails.js">
         <metrics statements="19" coveredstatements="16" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="1"/>
@@ -237,7 +234,7 @@
         <line num="16" count="1" type="stmt"/>
       </file>
       <file name="verifyToken.js" path="/Users/uidesign/Documents/problem/Backend_testing/controllers/verifyToken.js">
-        <metrics statements="22" coveredstatements="19" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="1"/>
+        <metrics statements="21" coveredstatements="18" conditionals="6" coveredconditionals="6" methods="2" coveredmethods="1"/>
         <line num="1" count="0" type="cond" truecount="1" falsecount="0"/>
         <line num="2" count="0" type="stmt"/>
         <line num="3" count="0" type="stmt"/>
@@ -246,20 +243,19 @@
         <line num="6" count="3" type="cond" truecount="1" falsecount="0"/>
         <line num="7" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="stmt"/>
-        <line num="10" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="11" count="2" type="stmt"/>
+        <line num="9" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="11" count="2" type="cond" truecount="1" falsecount="0"/>
         <line num="12" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="13" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="13" count="1" type="stmt"/>
         <line num="14" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
         <line num="16" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
         <line num="20" count="2" type="stmt"/>
-        <line num="21" count="3" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
       </file>
     </package>
     <package name="Backend_testing.routes">

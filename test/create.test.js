@@ -42,7 +42,7 @@ describe("create function", () => {
       Username: "johndoe",
       Password: "password123",
     });
-    
+
     const res = mockRes();
     await create(req, res);
     expect(res.status).toHaveBeenCalledWith(201);
