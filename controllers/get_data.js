@@ -1,5 +1,6 @@
 const db = require("../config/database");
 async function data() {
-  await db.query("SELECT * FROM Details");
+  const result = await db.query("SELECT * FROM Details");
+  return result[0]
 }
 module.exports = data;

@@ -1,7 +1,9 @@
 const db = require("../config/database");
+const data=require('./get_data')
 const getStudent = async (req, res) => {
-  const data = await db.query("SELECT * FROM Details");
-  if (data[0].length === 0) {
+  // const data = await db.query("SELECT * FROM Details");
+  const result = await data()
+  if (result.length === 0) {
     return res.status(404).send({
       success: false,
       message: "No details found",
