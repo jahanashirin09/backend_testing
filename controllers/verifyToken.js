@@ -8,7 +8,9 @@ function verifyToken(req, res, next) {
   }
   console.log(authHeader);
   let token = authHeader.split(" ")[1];
-  jwt.verify(token, "secret", function (err, decoded) {
+  const jwtSecret = process.env.JWT_SECRET;
+
+  jwt.verify(token, jwtSecret, function (err, decoded) {
     if (err) {
       res.status(500).send({
         error: "authentication failed",

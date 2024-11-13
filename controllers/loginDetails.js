@@ -8,7 +8,6 @@ const login = async (req, res) => {
   }
   let Username = req.body.Username;
   let Password = req.body.Password;
-
   const data = await db.query(
     "SELECT * FROM Details WHERE Username=? and Password=?",
     [Username, Password]
@@ -23,15 +22,14 @@ const login = async (req, res) => {
       message: "Login failed: invalid username or password",
     });
   }
-
   const user = data[0][0];
-
   let resp = {
     id: user.PersonID,
     name: user.FirstName,
   };
+  const jwtSecret = process.env.JWT_SECRET;
 
-  let token = jwt.sign(resp, "secret", { expiresIn: 3600 });
+  let token = jwt.sign(resp, jwtSecret, { expiresIn: 3600 });
   res.status(200).send({
     success: true,
     message: "logged successfully",

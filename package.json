@@ -20,6 +20,7 @@
   "devDependencies": {
     "@vitest/coverage-v8": "^2.1.4",
     "@vitest/spy": "^2.1.4",
+    "dotenv": "^16.4.5",
     "jsdom": "^25.0.1",
     "nodemon": "^3.1.7"
   }

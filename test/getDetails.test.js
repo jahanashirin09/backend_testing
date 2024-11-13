@@ -25,7 +25,7 @@ describe("getStudent function", () => {
     await getStudent(req, res);
     expect(res.status).toHaveBeenCalledWith(200);
   });
-  
+
   it("should return 404 if No details found", async () => {
     vi.spyOn(db, "query").mockResolvedValue([]);
     const req = {};

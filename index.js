@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 const mysqlpool = require("./config/database");
+require("dotenv").config();
+
 app.use(express.json());
 const routes = require("./routes/detailsRoutes");
 app.use("/person", routes);
